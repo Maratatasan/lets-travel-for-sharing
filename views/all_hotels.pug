@@ -1,0 +1,11 @@
+extend layout
+include mixins/_hotel
+
+block content
+    h2= title
+    //- allHotels was passed in on and from hotelController.js
+    //- a hotel from allHotels is passed to mixin hotel stored on _hotel.pug 
+    each hotel in allHotels
+        .hotel_wrapper  
+          +hotel(hotel)
+            //- this works because mixins are compiled to functions and can take in arguments

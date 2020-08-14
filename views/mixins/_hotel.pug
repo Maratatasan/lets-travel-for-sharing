@@ -1,0 +1,15 @@
+//- the hotel in brackets (hotel) is the data sent from all_hotel.pug
+//- one hotel at a time from the loop
+//- it has to be in brackets to be received
+mixin hotel(hotel)
+    .hotel
+      .hotel_img
+        a(href=`/all/${hotel._id}`)
+          img(src=`/images/hotels/${hotel.image}`)
+      .hotel_info
+        a(href=`/all/${hotel._id}`) 
+          h3= hotel.hotel_name
+        hr    
+        p= `Start rating: ${hotel.star_rating}`
+        p= `Country: ${hotel.country}`
+        p= `Cost per night: £${hotel.cost_per_night}`
